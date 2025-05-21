@@ -1,0 +1,459 @@
+:root {
+    --tarkov-primary: #c7c5b3;
+    --tarkov-secondary: #9a8866;
+    --tarkov-bg: #1f1f1f;
+    --tarkov-dark: #0f0f0f;
+    --tarkov-border: #9a8866;
+    --tarkov-highlight: #fff;
+}
+
+/* CRT efektini kaldır, Tarkov tarzı için gerekli değil */
+.crt-effect {
+    display: none;
+}
+
+/* Ana Container */
+.skill-container {
+    position: absolute; /* fixed yerine absolute */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--tarkov-bg);
+    border: 1px solid var(--tarkov-border);
+    padding: 15px;
+    display: none;
+    width: 800px; /* Sabit genişlik */
+    height: 500px; /* Sabit yükseklik */
+    font-family: 'Bender', sans-serif;
+    color: var(--tarkov-primary);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    user-select: none;
+    overflow: hidden; /* Ana container'da scroll olmasın */
+    margin: 0; /* margin'i kaldır */
+}
+
+/* Üst Bilgi */
+.header-panel {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--tarkov-secondary);
+    height: fit-content;
+}
+
+.level-display {
+    text-align: center;
+    padding: 8px;
+    border: 1px solid var(--tarkov-secondary);
+    background: var(--tarkov-dark);
+}
+
+.xp-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 6px; /* Further reduce gap */
+}
+
+.xp-bar {
+    height: 6px;
+    background: var(--tarkov-dark);
+    border: none;
+    position: relative;
+}
+
+.xp-fill {
+    height: 100%;
+    background: var(--tarkov-secondary);
+    position: relative;
+    transition: width 0.3s ease-in-out;
+}
+
+.xp-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 100%
+    );
+    animation: glow 2s infinite;
+}
+
+/* Skill Grid */
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+    padding: 5px; /* Further reduce padding */
+    height: 450px; /* Sabit yükseklik */
+    overflow-y: auto; /* Scroll ekle */
+}
+
+/* Skill grid scrollbar özelleştirmesi */
+.skill-grid::-webkit-scrollbar {
+    width: 5px;
+}
+
+.skill-grid::-webkit-scrollbar-track {
+    background: var(--tarkov-dark);
+}
+
+.skill-grid::-webkit-scrollbar-thumb {
+    background: var(--tarkov-secondary);
+}
+
+/* Grid içindeki kategori boyutlarını düzenle */
+.category {
+    background: var(--tarkov-dark);
+    padding: 10px;
+    border: 1px solid var(--tarkov-border);
+    margin-bottom: 10px;
+    height: fit-content; /* İçeriğe göre yükseklik */
+    min-height: 100px; /* Minimum yükseklik */
+}
+
+.category h3 {
+    color: var(--tarkov-secondary);
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.skill-item {
+    display: grid;
+    grid-template-columns: 30px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    margin: 5px 0;
+    padding: 8px;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--tarkov-border);
+}
+
+/* Disabled skill styling */
+.skill-item.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    position: relative;
+}
+
+.skill-item.disabled::after {
+    content: 'DISABLED';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.7em;
+    color: var(--tarkov-secondary);
+}
+
+.skill-item.disabled .upgrade-btn {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
+.skill-item.disabled .skill-icon,
+.skill-item.disabled .skill-levels {
+    opacity: 0.6;
+}
+
+.skill-icon {
+    color: var(--tarkov-secondary);
+    font-size: 1.2em;
+}
+
+.skill-levels {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 5px;
+    max-width: 100px; /* Adjust width to fit 10 dots */
+}
+
+.level-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 0;
+    background: var(--tarkov-dark);
+    border: 1px solid var(--tarkov-secondary);
+}
+
+.level-dot.active {
+    background: var(--tarkov-secondary);
+    box-shadow: none;
+}
+
+.upgrade-btn {
+    background: var(--tarkov-dark);
+    border: 1px solid var(--tarkov-secondary);
+    color: var(--tarkov-primary);
+    padding: 4px 8px;
+    cursor: pointer;
+    font-family: 'Bender', sans-serif;
+    font-size: 0.8rem;
+    transition: all 0.2s;
+    width: 60px; /* Increase width */
+}
+
+.upgrade-btn:hover:not(:disabled) {
+    background: var(--tarkov-secondary);
+    color: var(--tarkov-dark);
+}
+
+.upgrade-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--tarkov-secondary); }
+}
+
+.levelup-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--tarkov-primary);
+    font-family: 'Bender', sans-serif;
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    z-index: 9999;
+    text-shadow: 0 0 10px var(--tarkov-secondary);
+    /* background: var(--tarkov-bg); */
+    /* border: 1px solid var(--tarkov-border); */
+    /* padding: 20px; */
+}
+
+.levelup-title {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.level-container {
+    position: relative;
+    height: 80px;
+}
+
+.level-text {
+    font-size: 3.5em;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.old-level {
+    animation: slideDown 1s ease-out forwards;
+}
+
+.new-level {
+    animation: slideUp 1s ease-out forwards;
+    opacity: 0;
+}
+
+.levelup-points {
+    font-size: 1.2em;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out 1s forwards;
+}
+
+@keyframes slideDown {
+    from { top: 0; opacity: 1; }
+    to { top: 80px; opacity: 0; }
+}
+
+@keyframes slideUp {
+    from { top: -80px; opacity: 0; }
+    to { top: 0; opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animasyonlar */
+@keyframes glow {
+    0% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 0.3;
+    }
+}
+
+.blink {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.success-glow {
+    animation: tarkov-success 0.3s;
+}
+
+@keyframes tarkov-success {
+    0% { border-color: var(--tarkov-border); }
+    50% { border-color: var(--tarkov-secondary); }
+    100% { border-color: var(--tarkov-border); }
+}
+
+.error-shake {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(5px);
+    }
+
+    50% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Stats Container */
+.stats-container {
+    position: absolute; /* fixed yerine absolute */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--tarkov-dark);
+    border: 1px solid var(--tarkov-border);
+    padding: 15px;
+    display: none;
+    width: 400px; /* Sabit genişlik */
+    height: 500px; /* Sabit yükseklik */
+    font-family: 'Bender', sans-serif;
+    color: var(--tarkov-primary);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    text-shadow: none;
+    overflow-y: auto; /* İçerik taşarsa scroll ekle */
+    user-select: none;
+    font-size: 0.9em;
+    margin: 0; /* margin'i kaldır */
+}
+
+.stats-grid {
+    display: grid;
+    gap: 10px;
+    padding: 5px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--tarkov-border);
+}
+
+.stat-label {
+    color: var(--tarkov-secondary);
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 1px;
+}
+
+.stat-value {
+    text-align: right;
+    color: var(--tarkov-primary);
+    font-family: 'Bender', sans-serif;
+}
+
+.stat-detail {
+    color: var(--tarkov-secondary);
+    font-size: 0.8em;
+    opacity: 0.8;
+    margin-top: 2px;
+}
+
+/* Stats container header özelleştirmesi */
+.stats-container .header-panel {
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--tarkov-border);
+}
+
+.stats-container .level-display {
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--tarkov-border);
+    padding: 8px;
+    width: 100%;
+    text-align: center;
+    color: var(--tarkov-secondary);
+}
+
+/* XP Notification */
+.xp-notification {
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    background: var(--tarkov-dark);
+    border: 1px solid var(--tarkov-border);
+    color: var(--tarkov-secondary);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Bender', sans-serif;
+    font-size: 14px;
+    z-index: 1000;
+    transition: opacity 1s ease-out;
+}
+
+.xp-notification.fade-out {
+    opacity: 0;
+}
+
+/* Scroll bar'ı özelleştir */
+.skill-container::-webkit-scrollbar,
+.stats-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+.skill-container::-webkit-scrollbar-track,
+.stats-container::-webkit-scrollbar-track {
+    background: var(--tarkov-dark);
+}
+
+.skill-container::-webkit-scrollbar-thumb,
+.stats-container::-webkit-scrollbar-thumb {
+    background: var(--tarkov-secondary);
+}

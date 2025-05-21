@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FiveM Skill System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- Font Awesome Ekle -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Press Start 2P fontu yerine Bender fontunu kullan -->
+    <link href="https://fonts.cdnfonts.com/css/bender" rel="stylesheet">
+</head>
+
+<body>
+    <div class="skill-container">
+        <!-- Üst Bilgi -->
+        <div class="crt-effect"></div>
+
+        <div class="header-panel">
+            <div class="level-display">
+                <div>LEVEL</div>
+                <div class="blink" id="level">28</div>
+            </div>
+
+            <div class="xp-panel">
+                <div class="xp-bar">
+                    <div class="xp-fill">
+                        <div class="xp-glow"></div>
+                    </div>
+                </div>
+                <div class="blink">XP: <span id="currentXP">1540</span>/<span id="maxXP">3400</span></div>
+                <div>XP POINTS: <span class="blink" id="xpPoints">9</span></div>
+            </div>
+        </div>
+
+        <!-- Skilller -->
+        <div class="skill-grid">
+            <!-- Health Kategorisi -->
+            <div class="category">
+                <h3>[ HEALTH ]</h3>
+                <div class="skill-item" data-skill="health">
+                    <i class="fas fa-heart skill-icon"></i> <!-- Kalp ikonu -->
+                    <div>
+                        <div>MAX HEALTH</div>
+                        <div class="skill-levels">
+                            <div class="level-dot active"></div>
+                            <div class="level-dot active"></div>
+                            <div class="level-dot"></div>
+                        </div>
+                    </div>
+                    <button class="upgrade-btn" onclick="upgradeSkill('health')">(2XP)</button>
+                </div>
+
+                <div class="skill-item" data-skill="regen">
+                    <i class="fas fa-heartbeat skill-icon"></i> <!-- Nabız ikonu -->
+                    <div>
+                        <div>REGEN RATE</div>
+                        <div class="skill-levels">
+                            <div class="level-dot active"></div>
+                            <div class="level-dot"></div>
+                        </div>
+                    </div>
+                    <button class="upgrade-btn" onclick="upgradeSkill('regen')">(3XP)</button>
+                </div>
+            </div>
+
+            <!-- Stamina Kategorisi -->
+            <div class="category">
+                <h3>[ STAMINA ]</h3>
+                <div class="skill-item" data-skill="stamina">
+                    <i class="fas fa-dumbbell skill-icon"></i> <!-- Halter ikonu -->
+                    <div>
+                        <div>STAMINA CAP</div>
+                        <div class="skill-levels">
+                            <div class="level-dot active"></div>
+                            <div class="level-dot active"></div>
+                            <div class="level-dot active"></div>
+                        </div>
+                    </div>
+                    <button class="upgrade-btn" onclick="upgradeSkill('stamina')">(4XP)</button>
+                </div>
+
+                <div class="skill-item" data-skill="stamina_regen">
+                    <i class="fas fa-bolt skill-icon"></i> <!-- Şimşek ikonu -->
+                    <div>
+                        <div>REGEN SPEED</div>
+                        <div class="skill-levels">
+                            <div class="level-dot active"></div>
+                            <div class="level-dot"></div>
+                        </div>
+                    </div>
+                    <button class="upgrade-btn" onclick="upgradeSkill('stamina_regen')">(3XP)</button>
+                </div>
+            </div>
+
+            <!-- Movement Kategorisi -->
+            <div class="category">
+                <h3>[ MOVEMENT ]</h3>
+                <div class="skill-item" data-skill="speed">
+                    <i class="fas fa-tachometer-alt skill-icon"></i> <!-- Hız göstergesi -->
+                    <div>
+                        <div>SPRINT SPEED</div>
+                        <div class="skill-levels">
+                            <div class="level-dot active"></div>
+                            <div class="level-dot"></div>
+                        </div>
+                    </div>
+                    <button class="upgrade-btn" onclick="upgradeSkill('speed')">(2XP)</button>
+                </div>
+
+                <div class="skill-item" data-skill="swim">
+                    <i class="fas fa-swimmer skill-icon"></i> <!-- Yüzücü ikonu -->
+                    <div>
+                        <div>SWIM SPEED</div>
+                        <div class="skill-levels">
+                            <div class="level-dot active"></div>
+                            <div class="level-dot active"></div>
+                        </div>
+                    </div>
+                    <button class="upgrade-btn" onclick="upgradeSkill('swim')">(3XP)</button>
+                </div>
+            </div>
+
+            <!-- Survival Kategorisi -->
+            <div class="category">
+                <h3>[ DRIVING  ]</h3>
+                <div class="skill-item" data-skill="car_speed">
+                    <i class="fas fa-car skill-icon"></i> <!-- Çatal-bıçak -->
+                    <div>
+                        <div>CAR SPEED</div>
+                        <div class="skill-levels">
+                            <div class="level-dot active"></div>
+                            <div class="level-dot active"></div>
+                            <div class="level-dot"></div>
+                        </div>
+                    </div>
+                    <button class="upgrade-btn" onclick="upgradeSkill('car_speed')">(4XP)</button>
+                </div>
+
+                <div class="skill-item" data-skill="boat_speed">
+                    <i class="fas fa-ship skill-icon"></i> <!-- Damla ikonu -->
+                    <div>
+                        <div>BOAT SPEED</div>
+                        <div class="skill-levels">
+                            <div class="level-dot active"></div>
+                            <div class="level-dot"></div>
+                        </div>
+                    </div>
+                    <button class="upgrade-btn" onclick="upgradeSkill('boat_speed')">(3XP)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- skill-container'dan sonra ekle -->
+    <div class="stats-container">
+        <div class="crt-effect"></div>
+        <div class="header-panel">
+            <div class="level-display">
+                <div>SKILL STATS</div>
+            </div>
+        </div>
+        <div class="stats-grid" id="statsList">
+            <!-- Dinamik olarak doldurulacak -->
+        </div>
+    </div>
+    <div class="levelup-popup">
+        <div class="levelup-title">LEVEL UP</div>
+        <div class="level-container">
+            <div class="level-text old-level">3</div>
+            <div class="level-text new-level">4</div>
+        </div>
+        <div class="levelup-points">+<span id="levelup-points">5</span> SKILL POINTS</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
