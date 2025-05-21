@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+   <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+</head>
+
+<body>
+   <div class="container">
+      <div id="blur1"></div>
+      <div id="blur2"></div>
+
+      <div id="mainmenu">
+         <img src="imgs/logo.png" id="logo">
+         <div id="home-pagebutton">
+            <img src="imgs/ihome.png">
+            <span>Home</span>
+         </div>
+         <div id="sell-pagebutton">
+            <img src="imgs/isell.png">
+            <span>Sell</span>
+         </div>
+         <div id="stock-pagebutton">
+            <img src="imgs/istock.png">
+            <span>Market</span>
+         </div>
+         <div id="exitbutton">
+            <img src="imgs/iexit.png">
+            <span>Quit</span>
+         </div>
+      </div>
+      <span id="mainptext">Market Sell Item /</span>
+      <div class="mainpage home-page">
+         <span id="shopheader">ITEM SELL</span>
+         <div id="thumb">
+            <p>Explore business opportunities and become a successful entrepreneur in selling items through various
+               professions such as mining, oil refining, jewelry crafting, and more....</p>
+            <img src="imgs/flare.png" id="flare">
+            <div id="viewbutton">View Marketplace</div>
+         </div>
+      </div>
+      <div class="mainpage sell-page">
+         <span id="sitext">Sell Items</span>
+         <div id="itemlist">
+            <div id="fitemlist"></div>
+         </div>
+         <div class="sbutton selectallbutton">Select All</div>
+         <div class="sbutton sellbutton">Sell</div>
+         <div id="submitpage">
+            <div id="selectedlist"></div>
+            <div id="ftotal">
+               <div id="totalprice">Total: <span>2023$</span></div>
+            </div>
+            <div id="submitbutton">AGREE</div>
+         </div>
+      </div>
+      <div class="mainpage stock-page">
+         <span id="stockheader">Marketplace</span>
+         <div id="fstockheader">
+            <span id="stttext">#</span>
+            <span id="itemtext">Item</span>
+            <span id="pricetext">Price</span>
+            <span id="statetext">Status</span>
+         </div>
+         <div id="fitemstocklist">
+            <div id="itemstocklist"></div>
+         </div>
+      </div>
+   </div>
+   <div id="commandpage">
+      <div id="headercommandpage">
+         <span id="sttcmdtext">#</span>
+         <span id="itemcmdtext">Item</span>
+         <span id="pricecmdtext">Price</span>
+         <span id="statecmdtext">Status</span>
+      </div>
+      <div id="commandviewpage">
+         <div id="fcommanditemlist"></div>
+      </div>
+   </div>
+   <script src="app.js" type="text/javascript"></script>
+   <audio id="sound" src="button.wav"> </audio>
+   <audio id="sound2" src="button2.wav"> </audio>
+</body>
+
+</html>

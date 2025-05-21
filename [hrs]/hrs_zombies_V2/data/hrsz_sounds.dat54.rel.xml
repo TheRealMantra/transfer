@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dat54>
+ <Version value="7126027" />
+ <ContainerPaths>
+  <Item>DLC_HRSZ\ZOMBIE_SOUNDS</Item>
+ </ContainerPaths>
+ <Items>
+  <Item type="SimpleSound">
+   <Name>hash_D91C65F7</Name>
+   <Header>
+    <Flags value="0x00008004" />
+    <Volume value="65436" />
+    <Category>speech_pain</Category>
+   </Header>
+   <ContainerName>hash_3DFEB832</ContainerName>
+   <FileName>hash_9CCDF90C</FileName>
+   <WaveSlotNum value="0" />
+  </Item>
+  <Item type="DirectionalSound">
+   <Name>hash_689784EB</Name>
+   <Header>
+    <Flags value="0x00008004" />
+    <Volume value="65436" />
+    <Category>speech_pain</Category>
+   </Header>
+   <ChildSound>hash_D91C65F7</ChildSound>
+   <InnerAngle value="20" />
+   <OuterAngle value="65" />
+   <RearAttenuation value="-3" />
+   <YawAngle value="0" />
+   <PitchAngle value="0" />
+  </Item>
+  <Item type="SimpleSound">
+   <Name>hash_01DEB3B5</Name>
+   <Header>
+    <Flags value="0x00008004" />
+    <Volume value="65436" />
+    <Category>speech_pain</Category>
+   </Header>
+   <ContainerName>hash_3DFEB832</ContainerName>
+   <FileName>hash_AEFD9D7B</FileName>
+   <WaveSlotNum value="0" />
+  </Item>
+  <Item type="DirectionalSound">
+   <Name>hash_D3B3D750</Name>
+   <Header>
+    <Flags value="0x00008004" />
+    <Volume value="65436" />
+    <Category>speech_pain</Category>
+   </Header>
+   <ChildSound>hash_01DEB3B5</ChildSound>
+   <InnerAngle value="20" />
+   <OuterAngle value="65" />
+   <RearAttenuation value="-3" />
+   <YawAngle value="0" />
+   <PitchAngle value="0" />
+  </Item>
+  <Item type="SimpleSound">
+   <Name>hash_5A2C2C6E</Name>
+   <Header>
+    <Flags value="0x00008004" />
+    <Volume value="65436" />
+    <Category>speech_pain</Category>
+   </Header>
+   <ContainerName>hash_3DFEB832</ContainerName>
+   <FileName>hash_71822275</FileName>
+   <WaveSlotNum value="0" />
+  </Item>
+  <Item type="DirectionalSound">
+   <Name>hash_4278FDBC</Name>
+   <Header>
+    <Flags value="0x00008004" />
+    <Volume value="65436" />
+    <Category>speech_pain</Category>
+   </Header>
+   <ChildSound>hash_5A2C2C6E</ChildSound>
+   <InnerAngle value="20" />
+   <OuterAngle value="65" />
+   <RearAttenuation value="-3" />
+   <YawAngle value="0" />
+   <PitchAngle value="0" />
+  </Item>
+  <Item type="SimpleSound">
+   <Name>hash_A339D96F</Name>
+   <Header>
+    <Flags value="0x00008004" />
+    <Volume value="65436" />
+    <Category>speech_pain</Category>
+   </Header>
+   <ContainerName>hash_3DFEB832</ContainerName>
+   <FileName>hash_83A2C6B6</FileName>
+   <WaveSlotNum value="0" />
+  </Item>
+  <Item type="DirectionalSound">
+   <Name>hash_E689E00A</Name>
+   <Header>
+    <Flags value="0x00008004" />
+    <Volume value="65436" />
+    <Category>speech_pain</Category>
+   </Header>
+   <ChildSound>hash_A339D96F</ChildSound>
+   <InnerAngle value="20" />
+   <OuterAngle value="65" />
+   <RearAttenuation value="-3" />
+   <YawAngle value="0" />
+   <PitchAngle value="0" />
+  </Item>
+  <Item type="SimpleSound">
+   <Name>hash_959C77EB</Name>
+   <Header>
+    <Flags value="0x00008004" />
+    <Volume value="65436" />
+    <Category>speech_pain</Category>
+   </Header>
+   <ContainerName>hash_3DFEB832</ContainerName>
+   <FileName>hash_55E46B3A</FileName>
+   <WaveSlotNum value="0" />
+  </Item>
+  <Item type="DirectionalSound">
+   <Name>hash_E74E9B46</Name>
+   <Header>
+    <Flags value="0x00008004" />
+    <Volume value="65436" />
+    <Category>speech_pain</Category>
+   </Header>
+   <ChildSound>hash_959C77EB</ChildSound>
+   <InnerAngle value="20" />
+   <OuterAngle value="65" />
+   <RearAttenuation value="-3" />
+   <YawAngle value="0" />
+   <PitchAngle value="0" />
+  </Item>
+  <Item type="SimpleSound">
+   <Name>hash_2229CC56</Name>
+   <Header>
+    <Flags value="0x00008004" />
+    <Volume value="65436" />
+    <Category>speech_pain</Category>
+   </Header>
+   <ContainerName>hash_3DFEB832</ContainerName>
+   <FileName>hash_681E0FAD</FileName>
+   <WaveSlotNum value="0" />
+  </Item>
+  <Item type="DirectionalSound">
+   <Name>hash_3411F02A</Name>
+   <Header>
+    <Flags value="0x00008004" />
+    <Volume value="65436" />
+    <Category>speech_pain</Category>
+   </Header>
+   <ChildSound>hash_2229CC56</ChildSound>
+   <InnerAngle value="20" />
+   <OuterAngle value="65" />
+   <RearAttenuation value="-3" />
+   <YawAngle value="0" />
+   <PitchAngle value="0" />
+  </Item>
+  <Item type="SimpleSound">
+   <Name>hash_96728A99</Name>
+   <Header>
+    <Flags value="0x00008004" />
+    <Volume value="65436" />
+    <Category>speech_pain</Category>
+   </Header>
+   <ContainerName>hash_3DFEB832</ContainerName>
+   <FileName>hash_1740EDF8</FileName>
+   <WaveSlotNum value="0" />
+  </Item>
+  <Item type="DirectionalSound">
+   <Name>hash_B0D33F66</Name>
+   <Header>
+    <Flags value="0x00008004" />
+    <Volume value="65436" />
+    <Category>speech_pain</Category>
+   </Header>
+   <ChildSound>hash_96728A99</ChildSound>
+   <InnerAngle value="20" />
+   <OuterAngle value="65" />
+   <RearAttenuation value="-3" />
+   <YawAngle value="0" />
+   <PitchAngle value="0" />
+  </Item>
+  <Item type="SimpleSound">
+   <Name>hash_CB7D0BC4</Name>
+   <Header>
+    <Flags value="0x00008004" />
+    <Volume value="65436" />
+    <Category>speech_pain</Category>
+   </Header>
+   <ContainerName>hash_3DFEB832</ContainerName>
+   <FileName>hash_238E0692</FileName>
+   <WaveSlotNum value="0" />
+  </Item>
+  <Item type="DirectionalSound">
+   <Name>hash_8FD5946E</Name>
+   <Header>
+    <Flags value="0x00008004" />
+    <Volume value="65436" />
+    <Category>speech_pain</Category>
+   </Header>
+   <ChildSound>hash_CB7D0BC4</ChildSound>
+   <InnerAngle value="20" />
+   <OuterAngle value="65" />
+   <RearAttenuation value="-3" />
+   <YawAngle value="0" />
+   <PitchAngle value="0" />
+  </Item>
+  <Item type="SoundSet">
+   <Name>hash_29C92474</Name>
+   <Header>
+    <Flags value="0xAAAAAAAA" />
+   </Header>
+   <Items>
+    <Item>
+     <ScriptName>hash_9CCDF90C</ScriptName>
+     <ChildSound>hash_689784EB</ChildSound>
+    </Item>
+    <Item>
+     <ScriptName>hash_AEFD9D7B</ScriptName>
+     <ChildSound>hash_D3B3D750</ChildSound>
+    </Item>
+    <Item>
+     <ScriptName>hash_238E0692</ScriptName>
+     <ChildSound>hash_8FD5946E</ChildSound>
+    </Item>
+    <Item>
+     <ScriptName>hash_71822275</ScriptName>
+     <ChildSound>hash_4278FDBC</ChildSound>
+    </Item>
+    <Item>
+     <ScriptName>hash_1740EDF8</ScriptName>
+     <ChildSound>hash_B0D33F66</ChildSound>
+    </Item>
+    <Item>
+     <ScriptName>hash_681E0FAD</ScriptName>
+     <ChildSound>hash_3411F02A</ChildSound>
+    </Item>
+    <Item>
+     <ScriptName>hash_83A2C6B6</ScriptName>
+     <ChildSound>hash_E689E00A</ChildSound>
+    </Item>
+    <Item>
+     <ScriptName>hash_55E46B3A</ScriptName>
+     <ChildSound>hash_E74E9B46</ChildSound>
+    </Item>
+   </Items>
+  </Item>
+ </Items>
+</Dat54>

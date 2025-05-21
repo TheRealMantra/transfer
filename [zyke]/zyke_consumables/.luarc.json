@@ -1,0 +1,26 @@
+{
+    "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+    "workspace": {
+        "ignoreDir": [
+            ".vscode",
+            ".git",
+            ".github",
+            "node_modules",
+            "/extras/items/*.lua"
+        ],
+        "checkThirdParty": "false"
+    },
+    "diagnostics.globals": [
+        "PolyZone",
+        "lib",
+        "Z",
+        "HoldingKeys",
+        "Framework",
+        "MySQL",
+        "T",
+        "Translations",
+        "Target",
+        "Context",
+        "Items"
+    ]
+}

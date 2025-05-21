@@ -1,0 +1,2 @@
+ALTER TABLE `props` ADD COLUMN `metadata` LONGTEXT NULL;
+ALTER TABLE `props` ADD COLUMN `clientmetadata` LONGTEXT NULL;
